@@ -9,4 +9,17 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+print "Enter a store name: "
+store_name_input = gets.chomp
+print "Enter the annual revenue: "
+store_revenue_input = gets.chomp
+
+@newStore = Store.create(name: store_name_input, annual_revenue: store_revenue_input)
+@newStore.errors.full_messages.each do |error|
+  puts error
+end
+
+# newEmployee = Employee.create(first_name: store_name_input)
+# newEmployee.errors.full_messages.each do |error|
+#   puts error
+# end
